@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup</title>
+    <link rel="stylesheet" href="signup.css">
+</head>
+<body>
+    
+    <div class="container">
+        <div class="title">Registration</div>
+        <div class="content">
+            <form action="/signup" method="post" onsubmit="return validateForm()">
+            <div class="user-details">
+              <div class="input-box">
+                <span class="details">Full Name</span>
+                <input type="text" placeholder="Enter your fullname" id="name" name="name">
+                <span id="nameError" style="color: red;"></span>
+              </div>
+              <div class="input-box">
+                <span class="details">Username</span>
+                <input type="text" placeholder="Enter your username" id="username" name="username">
+                <span id="usernameError" style="color: red;"></span>
+              </div>
+              <div class="input-box">
+                <span class="details">Email</span>
+                <input type="text" placeholder="Enter your email" id="email" name="email">
+                <span id="emailError" style="color: red;"></span>
+              </div>
+              
+              <div class="input-box">
+                <span class="details">Password</span>
+                <input type="password" placeholder="Enter your password" id="password" name="password">
+                <span id="passwordError" style="color: red;"></span>
+              </div>
+            </div>
+            <div class="button">
+              <input type="submit" value="Register">
+            </div>
+            <div class="sign_up">
+                Already have an account? <a href="/signin">Login</a>
+          </form>
+        </div>
+      </div>
+    </body>
+</form>
+    <script>
+        function validateForm() {
+      const nameInput = document.getElementById('name');
+      const emailInput = document.getElementById('email');
+      const usernameInput = document.getElementById('username');
+      const passwordInput = document.getElementById('password');
+      const nameError = document.getElementById('nameError');
+      const emailError = document.getElementById('emailError');
+      const usernameError = document.getElementById('usernameError');
+      const passwordError = document.getElementById('passwordError');
+      let isValid = true;
+
+      
+      if (nameInput.value.trim() === '') {
+        nameError.textContent = 'Name is required.';
+        isValid = false;
+      } else {
+        nameError.textContent = '';
+      }
+
+      
+      const emailPattern = /^\S+@\S+\.\S+$/;
+      if (!emailPattern.test(emailInput.value)){
+        emailError.textContent = 'Invalid email address.';
+        isValid = false;
+      } else {
+        emailError.textContent = '';
+      }
+
+
+      if (usernameInput.value.trim() === '') {
+        usernameError.textContent = 'Username is required.';
+        isValid = false;
+      } else {
+        usernameError.textContent = '';
+      }
+
+      if (passwordInput.value.trim() === '') {
+        passwordError.textContent = 'Password is required.';
+        isValid = false;
+      } else{
+        passwordError.textContent = '';
+      }
+
+      return isValid;
+    }
+    </script>
+</body>
+</html>

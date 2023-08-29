@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="navbar-logo">
+                <img src="./images/cloud.png" alt="logo"></a>
+                
+              <h1>The Weather Channel</h1>
+            </div>
+            
+            <ul class="navbar-menu">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li class="dropdown">
+                    <a href="#" style="color: white;">Create Account </a>
+                    <ul class="dropdown-menu">
+                    <li><a href="/signup">Register</a></li>
+                    <li><a href="/signin">Login</a></li>
+                    </div>  
+                    </ul>  
+            </ul>
+        </nav>
+    </header>
+    <div class="col1">
+           <marquee behavior="scroll" direction="left"><h1>Welcome To Weather Channel App</h1></marquee> 
+        </div>
+
+        <div class="box-card">
+            <div class="box-item">
+                <h2>Login</h2>
+                <p>Please login to check the weather condition of any City in the world</p><br><br>
+                <button id="btn"><a href="/signin">Login</a></button>
+                
+                
+            </div>
+            <div class="box-item">
+                <h2>Register</h2>
+                <p>Dont have an account yet? Click the register button to sign-up</p> <br><br>
+                <button id="btn"><a href="/signup">Register</a></button>   
+            </div>
+            </div>
+            <footer>
+                <p>&copy; 2023 Simon-peter - Weather App</p>
+              </footer>
+</body>
+</html>
